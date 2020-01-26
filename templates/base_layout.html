@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Articles</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+<header class="wrapper">
+            <h1><a href="{% url 'articles:list' %}"><img src="/static/e.jpg" style="width:30px;height:30px;" alt="djangonautic" /></a></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </header><div class="wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+
+</body>
+</html>
+
